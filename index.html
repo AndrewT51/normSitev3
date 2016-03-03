@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="securityApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="mainCtrl">
+
+  
+  <header>
+    <div class="logo">
+      <a ui-sref="home"><img src="pics/small_arbLogo.png" alt=""></a>
+    </div>
+    <nav>
+      <ul id="main-navbar">
+        <a ui-sref="{{item.url}}" ng-repeat="item in menuItems">
+          <li data-item="{{$index}}">{{item.heading}}</li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section>
+    <ui-view></ui-view>
+  </section>
+
+
+  <footer>
+    <ul class="footer-links">
+        <a ui-sref="home"><li><i class="fa fa-home"></i></li></a>
+        <a href="mailto:norman@arbsecurities.com?subject=Query&body=Please send me more information"><li><i class="fa fa-envelope"></i></li></a>
+        <a ui-sref="about"><li>ABOUT</li></a>
+      </ul> 
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+  <script src="websiteData.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
