@@ -3,8 +3,9 @@ header * {
 }
 
 body {
+  max-width: 1024px;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -38,25 +39,42 @@ a {
   min-height: 250px;
 }
 
-
-
 p,h1,h2,h3,h4,h5,h6,ul {
   margin:20px;
 }
 
 
 .logo {
-
-  height: 80px;
-  /*border-bottom: 2px gray solid;*/
+  display:flex;
+  height: 100px;
 }
+
 
 .logo img {
-  height: 100%;
+  height: 100px;
+}
+
+.drop-btn {
+  margin: auto;
+  margin-right: 10px;
+  margin-top: 18px;
+  border: #E7C80E solid 2px;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background-color: #8BB7CA;
+}
+.drop-btn hr {
+  height:2px;
+  border-radius: 40%;
+  background-color: #E7C80E;
+  border-color: #2B3966;
+  margin: 10px auto;
+  width: 73%;
 }
 
 
-#main-navbar {
+#main-navbar{
   padding:0;
   margin:0;
   display:flex;
@@ -69,6 +87,16 @@ p,h1,h2,h3,h4,h5,h6,ul {
 }
 
 /* Navbar style when collapsed */
+/*#main-navbar li{
+  overflow:hidden;
+  transition:1s ease-in-out;
+  max-height:0;
+  text-align: center;
+  padding: 0px;
+  opacity:0;
+}*/
+
+/* Navbar style when collapsed */
 #main-navbar li{
   overflow:hidden;
   transition:1s ease-in-out;
@@ -77,15 +105,24 @@ p,h1,h2,h3,h4,h5,h6,ul {
   padding: 0px;
   opacity:0;
 }
-
 /* Navbar style when dropped down */
-header:hover #main-navbar li {
+#main-navbar.down li {
+  /*text-align: center;*/
+  /*overflow:hidden;*/
   background-color: #fafafa;
   border-bottom:solid gray 1px;
   padding: 10px;
   max-height:30px;
   opacity:1;
 }
+/* Navbar style when dropped down */
+/*header:hover #main-navbar li {
+  background-color: #fafafa;
+  border-bottom:solid gray 1px;
+  padding: 10px;
+  max-height:30px;
+  opacity:1;
+}*/
 
 .desktop-view {
   display:none;
@@ -132,6 +169,14 @@ footer li{
 =====================================*/
 
 @media only screen and (min-width:600px){
+/*  #main-navbar li{
+  overflow:hidden;
+  transition:1s ease-in-out;
+  max-height:0;
+  text-align: center;
+  padding: 0px;
+  opacity:0;
+}*/
   #main-navbar {
     display:flex;
     flex-direction: row;
@@ -143,11 +188,11 @@ footer li{
     border-bottom:solid white 3px;
     border-right:1px solid grey;
   }
-  #main-navbar a:hover{
+ /* #main-navbar a:hover{
     border-bottom:solid red 3px;
-  }
+  }*/
 
-  header:hover #main-navbar li, #main-navbar li {
+ #main-navbar li, #main-navbar.down li {
     opacity:1;
     text-align: center;
     margin:auto;
@@ -158,6 +203,10 @@ footer li{
   }
   #main-navbar a:last-child {
     border-right: 0;
+  }
+
+  .drop-btn {
+    display: none;
   }
   .desktop-view {
     display: block;
@@ -188,6 +237,9 @@ footer li{
   top: -63px;
   z-index:2;
  }
+  .selected{
+    border-bottom:solid red 3px !important;
+  }
 
 }
 

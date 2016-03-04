@@ -15,11 +15,16 @@
   <header>
     <div class="logo">
       <a ui-sref="home"><img src="pics/small_arbLogo.png" alt=""></a>
+      <div class="drop-btn" ng-click="dropMenu()">
+        <hr>
+        <hr>
+        <hr>
+      </div>
     </div>
     <nav>
       <ul id="main-navbar">
-        <a ui-sref="{{item.url}}" ng-repeat="item in menuItems">
-          <li data-item="{{$index}}">{{item.heading}}</li>
+        <a ng-repeat="item in menuItems" ng-click="menuClick(item,$index)" data-item="{{$index}}">
+          <li>{{item.heading}}</li>
         </a>
       </ul>
     </nav>
