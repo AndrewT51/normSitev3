@@ -227,9 +227,9 @@ footer li{
     z-index:-1;
   }
   .hidden-detail {
-  display: table-cell;
+  /*display: table-cell;*/
   vertical-align: middle;
-  width:500px;
+  /*width:500px;*/
   padding-bottom: 5px;
   font-weight: bold;
   color:#E5EBF1;
