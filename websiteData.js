@@ -25,7 +25,7 @@ var data = {
      {
       heading: "Asset Protection",
       url: "asset-protection",
-      image: "assetProtection"
+      image: "alarmResponse"
     },
      {
       heading: "Static Security",
